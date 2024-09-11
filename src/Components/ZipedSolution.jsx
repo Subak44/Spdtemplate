@@ -3,8 +3,8 @@ import { FaDownload } from "react-icons/fa";
 import JSZip from "jszip";
 import FileSaver from "file-saver";
 export const ZipedSolution = (props) => {
-  const [SiteUrl, setSiteUrl] = useState("");
-  const [environemnt, setenvironemnt] = useState([""]);
+  // const [SiteUrl, setSiteUrl] = useState("");
+  // const [environemnt, setenvironemnt] = useState([""]);
   // console.log(props);
   async function readfile(filepath) {
     let url2 = filepath;
