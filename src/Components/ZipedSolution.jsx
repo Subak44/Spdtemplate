@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaDownload } from "react-icons/fa";
 import JSZip from "jszip";
 import FileSaver from "file-saver";
@@ -27,7 +27,7 @@ export const ZipedSolution = (props) => {
   async function zipfiles() {
     // console.log("clicked");
 
-    let packagefolder = "Template";
+    // let packagefolder = "Template";
     let file1 = "Template-Automation_Script.ps1";
     let file2 = "announce1.jpg";
     let file3 = "announce2.jpg";
