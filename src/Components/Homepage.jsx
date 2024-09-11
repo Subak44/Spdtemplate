@@ -75,6 +75,7 @@ const Homepage = () => {
             {/* <h1>Hello, {username.length > 0 ? username : "User"}!</h1> */}
             <img
               src={Hometemplate}
+              alt="mooresville"
               style={{ width: "100%", height: "50%", objectFit: "contain" }}
             />
           </div>
