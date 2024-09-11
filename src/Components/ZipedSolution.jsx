@@ -5,7 +5,7 @@ import FileSaver from "file-saver";
 export const ZipedSolution = (props) => {
   const [SiteUrl, setSiteUrl] = useState("");
   const [environemnt, setenvironemnt] = useState([""]);
-  console.log(props);
+  // console.log(props);
   async function readfile(filepath) {
     let url2 = filepath;
     let file1 = await fetch(url2)
@@ -25,7 +25,7 @@ export const ZipedSolution = (props) => {
     return file1;
   }
   async function zipfiles() {
-    console.log("clicked");
+    // console.log("clicked");
 
     let packagefolder = "Template";
     let file1 = "Template-Automation_Script.ps1";
