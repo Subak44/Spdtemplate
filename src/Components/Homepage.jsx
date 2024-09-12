@@ -33,13 +33,13 @@ const Homepage = () => {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="tenant name"
+            placeholder="Tenant name"
             onChange={handleChangeTenantUrl}
             value={tenanturl}
           />
           <input
             type="text"
-            placeholder="site name"
+            placeholder="Site name"
             onChange={handleChange}
             value={sitename}
           />
@@ -54,7 +54,7 @@ const Homepage = () => {
           {/* {error && <div style={{ color: "red" }}>Enter the details</div>} */}
           <div style={{ marginTop: "20px" }}>
             {" "}
-            <button onClick={handleClick}>Create DMS Site</button>
+            <button onClick={handleClick}>Generate PnP Script</button>
           </div>
           <div style={{ marginTop: "20px" }}>
             {buttonclick && (
