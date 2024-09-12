@@ -186,6 +186,7 @@ export const ZipedSolution = (props) => {
           paddingRight: "15px",
           paddingLeft: "15px",
           fontSize: "12px",
+          cursor: "pointer",
         }}
       >
         <span style={{ marginRight: "7px" }}>
