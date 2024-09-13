@@ -2,7 +2,7 @@ $Sitename="<sitename>"
 $Tenantname="<tenantname>"
 $TenantUrl="https://$Tenantname-admin.sharepoint.com"
 $SiteUrl="https://$Tenantname.sharepoint.com/sites/$Sitename"
-$clientId="82df710e-f4f0-4da2-aaf8-fa35547387ea"
+$clientId="<clientid>"
 #Parameter
 $AdminCenterURL = $TenantUrl
  
