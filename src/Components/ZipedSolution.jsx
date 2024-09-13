@@ -41,6 +41,7 @@ export const ZipedSolution = (props) => {
     let file11 = "spfx-msgraph-peoplesearch.sppkg";
     let file12 = "upcomingevents-calendar.sppkg";
     let file13 = "admin.jpg";
+    let file14 = "Initialization_Script.ps1";
     let qfile1 = "contract-white.png";
     let qfile2 = "contract.png";
     let qfile3 = "facility-white.png";
@@ -53,8 +54,10 @@ export const ZipedSolution = (props) => {
     let qfile10 = "mail.png";
     let qfile11 = "service-white.png";
     let qfile12 = "service.png";
-
+    let wordfile = "Step by Step User Guide.docx";
     let templatepath = "/templates/Template-Automation_Script.ps1";
+    let inittemplatepath = "/templates/Initialization_PnPScript.ps1";
+    let wordtemplatepath = "/templates/Step by Step User Guide.docx";
     let imgfile1 = "/templates/AnnouncementImages/" + file2;
     let imgfile2 = "/templates/AnnouncementImages/" + file3;
     let imgfile3 = "/templates/AnnouncementImages/" + file4;
@@ -88,6 +91,7 @@ export const ZipedSolution = (props) => {
     let wfile3 = imgfile2;
     let wfile4 = imgfile3;
     let wfile5 = imgfile4;
+    let wfile6 = inittemplatepath;
     let sfile1 = sppkgfile1;
     let sfile2 = sppkgfile2;
     let sfile3 = sppkgfile3;
@@ -108,6 +112,7 @@ export const ZipedSolution = (props) => {
     let qlfile10 = qlinksfile10;
     let qlfile11 = qlinksfile11;
     let qlfile12 = qlinksfile12;
+    let wordfiledoc = wordtemplatepath;
 
     let contentfile1 = await readfile(wfile1);
     let contentfile2 = await readimgfile(wfile2);
@@ -134,7 +139,8 @@ export const ZipedSolution = (props) => {
     let contentfile23 = await readimgfile(qlfile10);
     let contentfile24 = await readimgfile(qlfile11);
     let contentfile25 = await readimgfile(qlfile12);
-
+    let contentfile26 = await readfile(wfile6);
+    let contentfile27 = await readimgfile(wordfiledoc);
     const zip = new JSZip();
     const secondfolder = zip.folder("AnnouncementImages");
     contentfile1 = contentfile1.replaceAll("<sitename>", `${props.sitename}`);
@@ -142,8 +148,14 @@ export const ZipedSolution = (props) => {
       "<tenantname>",
       `${props.tenanturl}`
     );
+    contentfile26 = contentfile26.replaceAll(
+      "<tenantname>",
+      `${props.tenanturl}`
+    );
 
     zip.file(file1, contentfile1);
+    zip.file(file14, contentfile26);
+    zip.file(wordfile, contentfile27);
     secondfolder.file(file2, contentfile2);
     secondfolder.file(file3, contentfile3);
     secondfolder.file(file4, contentfile4);
