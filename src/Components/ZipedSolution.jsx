@@ -15,6 +15,16 @@ export const ZipedSolution = (props) => {
       });
     return file1;
   }
+  async function readsppkgfile(filepath) {
+    let url2 = filepath;
+    let file1 = await fetch(url2)
+      .then((r) => r.arrayBuffer()) // Fetch as binary
+      .then((t) => {
+        return t;
+      });
+    return file1;
+  }
+
   async function readimgfile(filepath) {
     let url2 = filepath;
     let file1 = await fetch(url2)
@@ -118,13 +128,13 @@ export const ZipedSolution = (props) => {
     let contentfile2 = await readimgfile(wfile2);
     let contentfile3 = await readimgfile(wfile3);
     let contentfile4 = await readimgfile(wfile4);
-    let contentfile5 = await readfile(sfile1);
-    let contentfile6 = await readfile(sfile2);
-    let contentfile7 = await readfile(sfile3);
-    let contentfile8 = await readfile(sfile4);
-    let contentfile9 = await readfile(sfile5);
-    let contentfile10 = await readfile(sfile6);
-    let contentfile11 = await readfile(sfile7);
+    let contentfile5 = await readsppkgfile(sfile1);
+    let contentfile6 = await readsppkgfile(sfile2);
+    let contentfile7 = await readsppkgfile(sfile3);
+    let contentfile8 = await readsppkgfile(sfile4);
+    let contentfile9 = await readsppkgfile(sfile5);
+    let contentfile10 = await readsppkgfile(sfile6);
+    let contentfile11 = await readsppkgfile(sfile7);
     let contentfile12 = await readfile(sfile8);
     let contentfile13 = await readimgfile(wfile5);
     let contentfile14 = await readimgfile(qlfile1);
