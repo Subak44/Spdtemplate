@@ -135,7 +135,7 @@ export const ZipedSolution = (props) => {
     let contentfile9 = await readsppkgfile(sfile5);
     let contentfile10 = await readsppkgfile(sfile6);
     let contentfile11 = await readsppkgfile(sfile7);
-    let contentfile12 = await readfile(sfile8);
+    let contentfile12 = await readsppkgfile(sfile8);
     let contentfile13 = await readimgfile(wfile5);
     let contentfile14 = await readimgfile(qlfile1);
     let contentfile15 = await readimgfile(qlfile2);
