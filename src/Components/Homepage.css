@@ -64,7 +64,11 @@ button {
 button:active {
   transform: scale(0.95);
 }
-
+.generate-btn:disabled {
+  cursor: unset;
+  background-color: #e2e2e2;
+  color: #585656;
+}
 button:focus {
   outline: none;
 }

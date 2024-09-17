@@ -6,6 +6,7 @@ const Homepage = () => {
   const [tenanturl, settenanturl] = useState("");
   const [sitename, setSitename] = useState("");
   const [buttonclick, setbuttonclick] = useState(false);
+  const [disablebutton, setdisablebutton] = useState(false);
   const [error, seterror] = useState(false);
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent form submission
@@ -17,14 +18,13 @@ const Homepage = () => {
     setSitename(event.target.value);
   };
   const handleClick = async () => {
-    console.log("clicked");
     if (tenanturl && sitename !== "") {
       setbuttonclick(true);
+      setdisablebutton(true);
     } else {
       seterror(true);
     }
   };
-  console.log(tenanturl);
 
   return (
     <div class="container" id="container">
@@ -54,7 +54,13 @@ const Homepage = () => {
           {/* {error && <div style={{ color: "red" }}>Enter the details</div>} */}
           <div style={{ marginTop: "20px" }}>
             {" "}
-            <button onClick={handleClick}>Generate PnP Script</button>
+            <button
+              className="generate-btn"
+              disabled={disablebutton}
+              onClick={handleClick}
+            >
+              Generate PnP Script
+            </button>
           </div>
           <div style={{ marginTop: "20px" }}>
             {buttonclick && (

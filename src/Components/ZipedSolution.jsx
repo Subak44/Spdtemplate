@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaDownload } from "react-icons/fa";
 import JSZip from "jszip";
 import FileSaver from "file-saver";
+import Spinner from "../assets/Spinner.svg";
 export const ZipedSolution = (props) => {
-  // const [SiteUrl, setSiteUrl] = useState("");
+  const [isdownloaded, setisdownloaded] = useState(false);
   // const [environemnt, setenvironemnt] = useState([""]);
   // console.log(props);
   async function readfile(filepath) {
@@ -36,7 +37,7 @@ export const ZipedSolution = (props) => {
   }
   async function zipfiles() {
     // console.log("clicked");
-
+    setisdownloaded(true);
     // let packagefolder = "Template";
     let file1 = "Template-Automation_Script.ps1";
     let file2 = "announce1.jpg";
@@ -194,9 +195,15 @@ export const ZipedSolution = (props) => {
     fifthfolder.file(qfile11, contentfile24);
     fifthfolder.file(qfile12, contentfile25);
 
-    zip.generateAsync({ type: "blob" }).then(function (content) {
-      FileSaver.saveAs(content, "SPDTemplate.zip");
-    });
+    zip
+      .generateAsync({ type: "blob" })
+      .then(function (content) {
+        FileSaver.saveAs(content, "SPDTemplate.zip");
+      })
+      .then(() => {
+        console.log("done");
+        setisdownloaded(false);
+      });
   }
   return (
     <>
@@ -216,6 +223,12 @@ export const ZipedSolution = (props) => {
         </span>
         SPD Template
       </button>
+      {isdownloaded && (
+        <div>
+          <img src={Spinner} alt="spinner" height={90} />
+          <p>Please wait for the script to be generated</p>
+        </div>
+      )}
     </>
   );
 };
